@@ -21,7 +21,7 @@ class App extends React.Component {
 
   render() {
 
-    // const products = this.state.products;
+    const products = this.state.products;
 
     // const htmlproducts = [];
     // if (products !== null) {
@@ -32,30 +32,17 @@ class App extends React.Component {
     //   }
     // }
 
-    // let htmlproductsWithMap = [];
-    // if (products !== null) {
-    //   htmlproductsWithMap = products.map(
-    //     p => <div>{p.brand} - {p.name}</div>
-    //   ); 
-    // }
-
-    const clients = [
-      { name: "John", lastName: "Doe" },
-      { name: "Rubber", lastName: "Duck" },
-      { name: "Anonymous", lastName: "-" },
-    ];
-    const htmlClients = [];
-
-    for(let i = 0; i < clients.length; i++) {
-      htmlClients.push(
-        <li>{clients[i].name}, {clients[i].lastName}</li>
-      );
+    let htmlproductsWithMap = [];
+    if (products !== null) {
+      htmlproductsWithMap = products.map(
+        p => <div>{p.brand} - {p.model}</div>
+      ); 
     }
 
     return (
-      <ul>
-        {htmlClients}
-      </ul>
+      <div className="App">
+        {htmlproductsWithMap}
+      </div>
     );
 
 
